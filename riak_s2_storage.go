@@ -4,8 +4,7 @@ import (
 	"context"
 
 	s3_storage "github.com/storage-lock/go-s3-storage"
-	"github.com/storage-lock/go-storage"
-)
+	)
 
 // RiakS2Storage Riak S2对象存储实现 (S3兼容)
 type RiakS2Storage struct {
@@ -22,10 +21,7 @@ func NewRiakS2Storage(ctx context.Context, options *s3_storage.S3StorageOptions)
 
 const StorageName = "riak-s2-storage"
 
+
 func (x *RiakS2Storage) GetName() string {
 	return StorageName
-}
-
-func (x *RiakS2Storage) Capabilities() []storage.StorageCapability {
-	return x.S3Storage.Capabilities()
 }
